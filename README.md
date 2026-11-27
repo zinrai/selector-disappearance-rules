@@ -52,7 +52,7 @@ The record is there to get a disappearance noticed, not to follow it afterwards.
 
 ## Behaviour
 
-- Only `alert:` rules are read. `record:` rules are ignored, so the generated file can sit next to the rules it was generated from.
+- Only `alert:` rules are read. `record:` rules are ignored, so a pattern that also matches the generated file reads nothing from it.
 - A selector that selects `selector_disappeared_series` itself gets no rule, so an alert that reads the record can live among the alert rules.
 - A selector keeps its label matchers and loses its `offset` and `@` modifiers. Selectors are deduplicated across all files and sorted, so the same rules always give the same output.
 - A rule file that cannot be read or an expression that cannot be parsed fails the run and nothing is written. The output replaces an earlier one, so writing only what parsed would silently drop rules.
